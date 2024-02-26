@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-cd $(dirname $0)
+# スクリプトの実体のあるディレクトリに移動
+cd "$(dirname "$(readlink -f "$0")")" || exit
+cat ./test.txt
+
 echo test!! $@
 pwd
